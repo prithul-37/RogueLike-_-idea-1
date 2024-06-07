@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8742044170064253568}
   - component: {fileID: 737322556529547175}
   - component: {fileID: 2027243312478914139}
-  - component: {fileID: 4525728808228220820}
+  - component: {fileID: -3477212944607846150}
+  - component: {fileID: 6689622645529023574}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -157,7 +158,7 @@ TrailRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Time: 0.2
-  m_PreviewTimeScale: 0.36
+  m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.1
@@ -218,7 +219,42 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!114 &4525728808228220820
+--- !u!58 &-3477212944607846150
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2465923305468394732}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &6689622645529023574
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,7 +263,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2465923305468394732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da05ae9840017e4e9c0c8bdacc427a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 717e39a55a8b1b347a01a679ca4b809c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  live: 2
+  damage: 20
+  lifeTime: 3

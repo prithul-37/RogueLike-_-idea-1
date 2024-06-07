@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class destroy : MonoBehaviour
+public class XP : MonoBehaviour
 {
-    private float time = 0f;
-    public float live = 5f;
+    public int xp = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,16 +14,15 @@ public class destroy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
-        if (time > live)
-        {
-            Destroy(gameObject);
-        }
         
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag != "Player")
+        if(collision.gameObject.tag == "Player")
+        {
+            print("Colide..!");
+            collision.gameObject.GetComponent<player>().addXP(xp);
             Destroy(gameObject);
+        }
     }
 }
