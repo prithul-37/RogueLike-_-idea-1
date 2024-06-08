@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 254370622375413693}
   - component: {fileID: 593229700935283317}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2703174274089774752}
   - component: {fileID: 7059083789375052415}
   - component: {fileID: 7076988984043126593}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: firePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 2312007268195318456}
   - component: {fileID: 8497172275668566997}
   - component: {fileID: 1536059962004605445}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}

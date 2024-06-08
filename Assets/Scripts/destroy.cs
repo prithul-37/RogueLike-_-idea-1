@@ -27,4 +27,9 @@ public class destroy : MonoBehaviour
         if(collision.gameObject.tag != "Player")
             Destroy(gameObject);
     }
+
+    public void destroyObj()
+    {
+        Destroy(gameObject);
+    }
 }

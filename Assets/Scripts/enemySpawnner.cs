@@ -10,6 +10,7 @@ public class enemySpawnner : MonoBehaviour
 
     private void Start()
     {
+        Instantiate(enemy, transform.position, Quaternion.identity);
         StartCoroutine(spawnEnemy());
     }
     IEnumerator spawnEnemy()
