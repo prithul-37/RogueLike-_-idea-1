@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemyMovement : MonoBehaviour
 {
 
-    public Transform tf;
+    private Transform tf;
     public Rigidbody2D rb;
     
     private Vector3 currPos;
@@ -15,8 +15,8 @@ public class enemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
 
+       tf =  GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame

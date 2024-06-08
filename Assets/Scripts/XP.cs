@@ -20,7 +20,6 @@ public class XP : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            print("Colide..!");
             collision.gameObject.GetComponent<player>().addXP(xp);
             Destroy(gameObject);
         }

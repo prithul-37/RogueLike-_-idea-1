@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class enemySpawnner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int enemyRate;
+    public GameObject enemy;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        StartCoroutine(spawnEnemy());
+    }
+    IEnumerator spawnEnemy()
+    {
+        WaitForSeconds wait = new WaitForSeconds((float)60 / enemyRate);
+
+        while (true)
+        {
+            yield return wait;
+            Instantiate(enemy, transform.position, Quaternion.identity);
+        }
     }
 }

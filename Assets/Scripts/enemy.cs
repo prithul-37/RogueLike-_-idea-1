@@ -6,6 +6,7 @@ public class enemy : MonoBehaviour
 {   
     public int resistance = 5;
     public int enemyMaxHealth = 100;
+    public int xpWillGive = 10;
     public GameObject XP;
 
     private int currentHealth;
@@ -13,6 +14,7 @@ public class enemy : MonoBehaviour
     void Start()
     {
         currentHealth = enemyMaxHealth;
+        XP.GetComponent<XP>().xp = xpWillGive;
     }
 
     // Update is called once per frame
@@ -20,7 +22,7 @@ public class enemy : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            Instantiate(XP,transform.position,Quaternion.identity);
+            GameObject gg = Instantiate(XP,transform.position,Quaternion.identity);
             Destroy(gameObject);
         }
     }
@@ -28,6 +30,6 @@ public class enemy : MonoBehaviour
     public void Damage(int x)
     {
         currentHealth -= (x-resistance);
-        print(currentHealth);
+        //print(currentHealth);
     }
 }

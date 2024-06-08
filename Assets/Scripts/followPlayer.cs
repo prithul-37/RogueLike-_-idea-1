@@ -6,6 +6,7 @@ public class followPlayer : MonoBehaviour
 {
     private GameObject player;
     public Rigidbody2D rb;
+    public float speed;
 
     Vector3 currPos;
     Vector3 target;
@@ -18,7 +19,7 @@ public class followPlayer : MonoBehaviour
     private void FixedUpdate()
     {   
         currPos = rb.position;
-        target = Vector3.MoveTowards(currPos, player.transform.position, (float)3.0f * Time.deltaTime); //Form,to,distance
+        target = Vector3.MoveTowards(currPos, player.transform.position, (float)speed * Time.deltaTime); //Form,to,distance
         rb.MovePosition(target);
     }
 }
