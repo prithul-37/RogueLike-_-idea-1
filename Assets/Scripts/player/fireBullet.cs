@@ -31,8 +31,8 @@ public class fireBullet : MonoBehaviour
     }
     public void incFireRate()
     {
-        fireRate+=5;
-        print(fireRate);
+        fireRate+=30;
+        //print(fireRate);
         StopAllCoroutines();
         StartCoroutine(shoot());
 
