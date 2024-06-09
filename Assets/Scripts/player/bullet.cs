@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
-    public int damage = 20;
+    private int damage;
     public float lifeTime = 4.0f;
     public GameObject hitAnimationObj;
+    private GameObject player;
 
     void Start()
     {
         StartCoroutine(DestroyObject());
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
 
@@ -19,6 +21,8 @@ public class bullet : MonoBehaviour
 
         if(collision.gameObject.tag == "Enemy")
         {
+            
+            damage = player.GetComponent<player>().damage;
             collision.gameObject.GetComponent<enemy>().Damage(damage);
             Instantiate(hitAnimationObj,new Vector3(transform.position.x,transform.position.y,-.2f),Quaternion.identity);
             Destroy(gameObject);

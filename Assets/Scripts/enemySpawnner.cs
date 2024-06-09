@@ -7,10 +7,11 @@ public class enemySpawnner : MonoBehaviour
 {
     public int enemyRate;
     public GameObject enemy;
+    public bool initialSpawn = true;
 
     private void Start()
-    {
-        Instantiate(enemy, transform.position, Quaternion.identity);
+    {   if(initialSpawn)
+            Instantiate(enemy, transform.position, Quaternion.identity);
         StartCoroutine(spawnEnemy());
     }
     IEnumerator spawnEnemy()

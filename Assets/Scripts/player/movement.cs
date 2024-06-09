@@ -7,7 +7,7 @@ public class movement : MonoBehaviour
     
     private Vector2 mv;
     public Rigidbody2D rb;
-    public float moveSpeed;
+    private float moveSpeed;
     public Camera cam;
     private Vector2 mousePos;
     private Vector2 viewDir;
@@ -24,14 +24,16 @@ public class movement : MonoBehaviour
         mv.x = Input.GetAxis("Horizontal");
         mv.y = Input.GetAxis("Vertical");
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        
     }
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position+mv*moveSpeed*Time.deltaTime);
+        moveSpeed = gameObject.GetComponent<player>().speed;
+        rb.MovePosition(rb.position + mv * moveSpeed * Time.deltaTime);
         viewDir = mousePos - rb.position;
         float angle = Mathf.Atan2(viewDir.y, viewDir.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
-
     }
 }

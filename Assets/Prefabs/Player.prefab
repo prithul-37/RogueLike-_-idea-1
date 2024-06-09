@@ -427,6 +427,7 @@ MonoBehaviour:
   currhealth: 0
   XP: 0
   level: 0
+  floatingText: {fileID: 4421329947091987515, guid: a0f0b039d82c3f14589f49f4620afaf8, type: 3}
 --- !u!114 &1536059962004605445
 MonoBehaviour:
   m_ObjectHideFlags: 0

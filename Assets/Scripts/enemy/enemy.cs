@@ -8,8 +8,10 @@ public class enemy : MonoBehaviour
     public int resistance = 5;
     public int enemyMaxHealth = 100;
     public int xpWillGive = 10;
+
     public GameObject XP;
     public GameObject floatingText;
+    private GameObject player;
 
     private int currentHealth;
     // Start is called before the first frame update
@@ -17,6 +19,7 @@ public class enemy : MonoBehaviour
     {
         currentHealth = enemyMaxHealth;
         XP.GetComponent<XP>().xp = xpWillGive;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void Damage(int x)
@@ -32,5 +35,13 @@ public class enemy : MonoBehaviour
             Destroy(gameObject);
         }
         //print(currentHealth);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            player.GetComponent<player>().death();
+        }
     }
 }
