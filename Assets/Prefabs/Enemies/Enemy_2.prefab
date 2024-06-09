@@ -191,6 +191,7 @@ MonoBehaviour:
   resistance: 0
   enemyMaxHealth: 20
   xpWillGive: 5
+  Score: 80
   XP: {fileID: 4285614594035093703, guid: c20c2b09b4a60bd4b9733d948220d449, type: 3}
   floatingText: {fileID: 4421329947091987515, guid: 53b847b95ae75404f969696d55d29420, type: 3}
 --- !u!114 &6804201833554751944

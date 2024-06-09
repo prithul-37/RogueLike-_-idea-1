@@ -492,7 +492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8886595041609438363, guid: 0f5132703d47d9f4b89f312af46af4fb, type: 3}
       propertyPath: initialSpawn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyRate: 6
   enemy: {fileID: 2149085747814930569, guid: b05dc8829129c0c4c920372de359ac8c, type: 3}
-  initialSpawn: 1
+  initialSpawn: 0
 --- !u!4 &2016333542
 Transform:
   m_ObjectHideFlags: 0

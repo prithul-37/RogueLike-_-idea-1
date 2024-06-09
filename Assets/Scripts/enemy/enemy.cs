@@ -8,10 +8,11 @@ public class enemy : MonoBehaviour
     public int resistance = 5;
     public int enemyMaxHealth = 100;
     public int xpWillGive = 10;
+    public int Score = 10;
 
     public GameObject XP;
     public GameObject floatingText;
-    private GameObject player;
+    private GameObject Player;
 
     private int currentHealth;
     // Start is called before the first frame update
@@ -19,7 +20,7 @@ public class enemy : MonoBehaviour
     {
         currentHealth = enemyMaxHealth;
         XP.GetComponent<XP>().xp = xpWillGive;
-        player = GameObject.FindGameObjectWithTag("Player");
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void Damage(int x)
@@ -30,6 +31,7 @@ public class enemy : MonoBehaviour
         currentHealth -= (x-resistance);
         if (currentHealth <= 0)
         {
+            player.score += Score;
             GameObject xp = Instantiate(XP, transform.position, Quaternion.identity);
             xp.GetComponent<XP>().xp = xpWillGive;
             Destroy(gameObject);
@@ -41,7 +43,7 @@ public class enemy : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            player.GetComponent<player>().death();
+            Player.GetComponent<player>().death();
         }
     }
 }
