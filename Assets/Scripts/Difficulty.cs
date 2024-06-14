@@ -7,7 +7,6 @@ public class Difficulty : MonoBehaviour
     private int totalLVL;
     private List<int> a = new List<int>();
 
-    public GameObject spawnners;
 
     // Start is called before the first frame update
     void Start()

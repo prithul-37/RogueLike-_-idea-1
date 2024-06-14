@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 838737862273617190}
   - component: {fileID: 3286814788040240219}
   - component: {fileID: 5149953984664130334}
+  - component: {fileID: 8279499610402721582}
   m_Layer: 7
   m_Name: Enemy_3
   m_TagString: Enemy
@@ -230,7 +231,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 874683578946319782, guid: 1b0b3c2568221bb40b2f551136f66521, type: 3}
-  MoveSpeed: 4
+--- !u!114 &8279499610402721582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2149085747814930569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232b4c1d9a2e21c4fb722ca82c3ac028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paths:
+  - {fileID: 748996497421571454, guid: 97c55bb5059233047829914c1ce5c5b7, type: 3}
+  - {fileID: 2513940255621786153, guid: 305a572375f532448b51404d355aecdd, type: 3}
+  - {fileID: 3676258824415629186, guid: 4b7fc6b8c82fccf4ba022d9c10a650a0, type: 3}
+  - {fileID: 4752566791976274344, guid: dfb2af67404d3f24394535a49fb07d0b, type: 3}
+  moveSpeed: 4
 --- !u!1 &2213802277197416128
 GameObject:
   m_ObjectHideFlags: 0

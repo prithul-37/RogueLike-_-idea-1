@@ -45,8 +45,8 @@ public class player : MonoBehaviour
             XP -= nextLevel;
             nextLevel += 20;
 
-            speed += .1f;
-            speed = Mathf.Clamp(speed,4,10);
+            speed += .5f;
+            speed = Mathf.Clamp(speed,4,15);
 
             if (level % 10 == 0)
             {

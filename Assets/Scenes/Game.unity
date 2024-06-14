@@ -2167,7 +2167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea344b33c0dda99498e7e8f3de07a84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnners: {fileID: 0}
 --- !u!1001 &2087107030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2407,6 +2406,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 5526264787518106408, guid: 15ceed8c50fd99f4cb4114b905b8385b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7059083789375052415, guid: 15ceed8c50fd99f4cb4114b905b8385b, type: 3}
       propertyPath: fireRate
       value: 120
