@@ -5,23 +5,29 @@ using UnityEngine;
 
 public class enemySpawnner : MonoBehaviour
 {
-    public int enemyRate;
-    public GameObject enemy;
-    public bool initialSpawn = true;
+
+    public GameObject[] enemy;
+
+
+    public float min = 2f;
+    public float max = 5f;
+    private float nextSpawn; 
+    public bool iniitialSpawn = false;
 
     private void Start()
-    {   if(initialSpawn)
-            Instantiate(enemy, transform.position, Quaternion.identity);
-        StartCoroutine(spawnEnemy());
+    {   
+        nextSpawn = Random.Range(min, max);
+        if(iniitialSpawn)
+            Instantiate(enemy[Random.Range(0,enemy.Length)],transform.position,Quaternion.identity);
     }
-    IEnumerator spawnEnemy()
-    {
-        WaitForSeconds wait = new WaitForSeconds((float)60 / enemyRate);
 
-        while (true)
-        {
-            yield return wait;
-            Instantiate(enemy, transform.position, Quaternion.identity);
+    private void Update()
+    {
+        nextSpawn -= Time.deltaTime;
+        if (nextSpawn <= 0) {
+            nextSpawn = Random.Range(min, max);
+            Instantiate(enemy[Random.Range(0, enemy.Length)], transform.position, Quaternion.identity);
         }
     }
+
 }

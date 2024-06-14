@@ -21,6 +21,7 @@ public class ExitMenu : MonoBehaviour
     }
     public void Retry()
     {
+        player.score = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 

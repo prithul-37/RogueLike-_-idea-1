@@ -33,10 +33,13 @@ public class player : MonoBehaviour
     public void addXP(int x)
     {
         XP += x;
+        
 
         if (XP > nextLevel)
         {
             level++;
+            GameObject.FindGameObjectWithTag("spawner").GetComponent<Difficulty>().increaseDifficulty();
+
             GameObject gg = Instantiate(floatingText,transform.position,Quaternion.identity);
             gg.GetComponent<TextMeshPro>().SetText("Level"+level.ToString());
             XP -= nextLevel;
@@ -47,7 +50,7 @@ public class player : MonoBehaviour
 
             if (level % 10 == 0)
             {
-                damage += 3;
+                damage += 5;
             }
             if (level % 3 == 0)
             {
