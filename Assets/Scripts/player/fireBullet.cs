@@ -23,7 +23,8 @@ public class fireBullet : MonoBehaviour
         while (true) 
         {
             yield return wait;
-            AudioSource.Play();
+            if(AudioSource != null)
+                AudioSource.Play();
             GameObject GG = Instantiate(bullet, transform.position, Quaternion.identity);
             GG.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletForce, ForceMode2D.Impulse);
         }

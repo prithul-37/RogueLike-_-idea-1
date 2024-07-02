@@ -24,9 +24,9 @@ public class bullet : MonoBehaviour
             
             damage = player.GetComponent<player>().damage;
             collision.gameObject.GetComponent<enemy>().Damage(damage);
-            Instantiate(hitAnimationObj,new Vector3(transform.position.x,transform.position.y,-.2f),Quaternion.identity);
-            Destroy(gameObject);
         }
+        Instantiate(hitAnimationObj, new Vector3(transform.position.x, transform.position.y, -.2f), Quaternion.identity);
+        Destroy(gameObject);
     }
 
     IEnumerator DestroyObject()
