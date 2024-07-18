@@ -1,7 +1,0 @@
-ManifestFileVersion: 0
-CRC: 3174807111
-AssetBundleManifest:
-  AssetBundleInfos:
-    Info_0:
-      Name: enemy
-      Dependencies: {}

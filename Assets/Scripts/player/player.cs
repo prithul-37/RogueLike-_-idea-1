@@ -38,7 +38,6 @@ public class player : MonoBehaviour
         if (XP > nextLevel)
         {
             level++;
-            GameObject.FindGameObjectWithTag("spawner").GetComponent<Difficulty>().increaseDifficulty();
 
             GameObject gg = Instantiate(floatingText,transform.position,Quaternion.identity);
             gg.GetComponent<TextMeshPro>().SetText("Level"+level.ToString());
