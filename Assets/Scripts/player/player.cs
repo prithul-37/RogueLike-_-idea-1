@@ -39,8 +39,7 @@ public class player : MonoBehaviour
         {
             level++;
 
-            GameObject gg = Instantiate(floatingText,transform.position,Quaternion.identity);
-            gg.GetComponent<TextMeshPro>().SetText("Level"+level.ToString());
+            PopUpText.Create("Level" + level.ToString(), transform.position, Color.white);
             XP -= nextLevel;
             nextLevel += 20;
 

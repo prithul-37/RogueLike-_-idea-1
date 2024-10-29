@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6968386874395095320}
   - component: {fileID: 5884548827073569985}
   - component: {fileID: 4625057950057459743}
-  - component: {fileID: 5587770587897072981}
   - component: {fileID: 95021796757993796}
+  - component: {fileID: 6182339533380061715}
   m_Layer: 0
   m_Name: FloatingText
   m_TagString: Untagged
@@ -173,27 +173,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 5884548827073569985}
   m_maskType: 0
---- !u!95 &5587770587897072981
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4421329947091987515}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 88a1d335cafb7a340a5d620670b0bba1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &95021796757993796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,3 +186,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   live: 5
+--- !u!114 &6182339533380061715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421329947091987515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c56f19d1631e64db2307d7725964ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

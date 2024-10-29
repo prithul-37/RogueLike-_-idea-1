@@ -11,7 +11,6 @@ public class enemy : MonoBehaviour
     public int Score = 10;
 
     public GameObject XP;
-    public GameObject floatingText;
     private GameObject Player;
 
     private int currentHealth;
@@ -23,13 +22,9 @@ public class enemy : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    public void Damage(int x)
-    {   
-
-        GameObject gg = Instantiate(floatingText,transform.position,Quaternion.identity);
-        Color color = gameObject.GetComponent<SpriteRenderer>().color;
-        gg.GetComponent<TextMeshPro>().color = new Color(255 - color.r, 255 - color.r, 255 - color.b);
-        gg.GetComponent<TextMeshPro>().SetText((x - resistance).ToString());
+    public void Damage(int x,Vector3 pos)
+    {
+        PopUpText.Create((x - resistance).ToString(), pos,Color.white);
         currentHealth -= (x-resistance);
         if (currentHealth <= 0)
         {

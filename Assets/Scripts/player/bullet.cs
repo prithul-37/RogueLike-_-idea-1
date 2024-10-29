@@ -23,7 +23,7 @@ public class bullet : MonoBehaviour
         {
             
             damage = player.GetComponent<player>().damage;
-            collision.gameObject.GetComponent<enemy>().Damage(damage);
+            collision.gameObject.GetComponent<enemy>().Damage(damage,transform.position);
         }
         Instantiate(hitAnimationObj, new Vector3(transform.position.x, transform.position.y, -.2f), Quaternion.identity);
         Destroy(gameObject);
