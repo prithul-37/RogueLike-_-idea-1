@@ -9,7 +9,7 @@ public class XP : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<player>().addXP(xp);
+            collision.gameObject.GetComponent<Player>().addXP(xp);
             Destroy(gameObject);
         }
     }

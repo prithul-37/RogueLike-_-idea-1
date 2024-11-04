@@ -336,7 +336,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   Redius: 28.2
-  Damage: 0
+  Damage: 100
 --- !u!50 &5524201539831534314
 Rigidbody2D:
   serializedVersion: 4

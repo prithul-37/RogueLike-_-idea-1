@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bullet : MonoBehaviour
+public class PlayerBullet : MonoBehaviour
 {
     private int damage;
     public float lifeTime = 4.0f;
@@ -19,11 +19,11 @@ public class bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if(collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
-            
-            damage = player.GetComponent<player>().damage;
-            collision.gameObject.GetComponent<enemy>().Damage(damage,transform.position);
+
+            damage = player.GetComponent<Player>().damage;
+            collision.gameObject.GetComponent<Enemy>().Damage(damage, transform.position);
         }
         Instantiate(hitAnimationObj, new Vector3(transform.position.x, transform.position.y, -.2f), Quaternion.identity);
         Destroy(gameObject);
@@ -33,6 +33,6 @@ public class bullet : MonoBehaviour
     {
         WaitForSeconds wait = new WaitForSeconds((float)1.0f);
         yield return wait;
-        Destroy(gameObject); 
+        Destroy(gameObject);
     }
 }

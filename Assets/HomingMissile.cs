@@ -21,13 +21,14 @@ public class HomingMissile : MonoBehaviour
     }
 
     void Update()
-    {   
+    {
         if (state == Homing_Missile_State.Finding)
-        {   
+        {
 
             var colider = Physics2D.OverlapCircle(transform.position, Redius, mask);
             target = colider.transform;
             state = Homing_Missile_State.Follow;
+            Invoke("ResetVelocity", .2f);
 
         }
 
@@ -46,8 +47,8 @@ public class HomingMissile : MonoBehaviour
             // Check if close enough to the target to destroy itself
             if (Vector3.Distance(transform.position, target.position) < destroyDistance)
             {
+                target.GetComponent<Enemy>().Damage(Damage, transform.position);
                 Destroy(gameObject); // Destroy the missile
-                target.GetComponent<Enemy>().Damage(Damage,transform.position);
 
             }
         }
@@ -57,6 +58,11 @@ public class HomingMissile : MonoBehaviour
     //{
     //    Gizmos.DrawWireSphere(transform.position, Redius);
     //}
+
+    void ResetVelocity()
+    {
+        GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+    }
 }
 
 public enum Homing_Missile_State

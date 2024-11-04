@@ -13,7 +13,7 @@ public class ExitMenu : MonoBehaviour
         if(Text != null)
         {   
             
-            string show = "Your Score is:" + player.score.ToString();
+            string show = "Your Score is:" + Player.score.ToString();
             Text.GetComponent<TextMeshProUGUI>().text = show;
 
 
@@ -21,7 +21,7 @@ public class ExitMenu : MonoBehaviour
     }
     public void Retry()
     {
-        player.score = 0;
+        Player.score = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class enemy : MonoBehaviour
-{   
+public class Enemy : MonoBehaviour
+{
     public int resistance = 5;
     public int enemyMaxHealth = 100;
     public int xpWillGive = 10;
@@ -22,13 +22,13 @@ public class enemy : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    public void Damage(int x,Vector3 pos)
+    public void Damage(int x, Vector3 pos)
     {
-        PopUpText.Create((x - resistance).ToString(), pos,Color.white);
-        currentHealth -= (x-resistance);
+        PopUpText.Create((x - resistance).ToString(), pos, Color.white);
+        currentHealth -= (x - resistance);
         if (currentHealth <= 0)
         {
-            player.score += Score;
+            global::Player.score += Score;
             GameObject xp = Instantiate(XP, transform.position, Quaternion.identity);
             xp.GetComponent<XP>().xp = xpWillGive;
             Destroy(gameObject);
@@ -38,9 +38,9 @@ public class enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
-            Player.GetComponent<player>().death();
+            Player.GetComponent<Player>().death();
         }
     }
 }

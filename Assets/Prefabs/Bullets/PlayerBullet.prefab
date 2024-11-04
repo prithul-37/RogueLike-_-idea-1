@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 737322556529547175}
   - component: {fileID: 2027243312478914139}
   - component: {fileID: -3477212944607846150}
-  - component: {fileID: 6689622645529023574}
+  - component: {fileID: 5307058914464708259}
   m_Layer: 9
   m_Name: PlayerBullet
   m_TagString: Untagged
@@ -113,7 +113,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!96 &2027243312478914139
 TrailRenderer:
@@ -254,7 +254,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &6689622645529023574
+--- !u!114 &5307058914464708259
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -266,5 +266,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717e39a55a8b1b347a01a679ca4b809c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 3
+  lifeTime: 4
   hitAnimationObj: {fileID: 3175590812219770571, guid: dd370caa0c2877543adb9813dd62c82c, type: 3}

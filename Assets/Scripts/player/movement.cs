@@ -30,7 +30,7 @@ public class movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        moveSpeed = gameObject.GetComponent<player>().speed;
+        moveSpeed = gameObject.GetComponent<Player>().speed;
         rb.MovePosition(rb.position + mv * moveSpeed * Time.deltaTime);
         viewDir = mousePos - rb.position;
         float angle = Mathf.Atan2(viewDir.y, viewDir.x) * Mathf.Rad2Deg - 90f;

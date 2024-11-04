@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class player : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public static int score = 0;
 
@@ -56,7 +56,7 @@ public class player : MonoBehaviour
             }
             if (level % 2 == 0)
             {
-                FirePoint.GetComponent<fireBullet>().incBulletForce();
+                FirePoint.GetComponent<fireBullet>().IncBulletForce();
             }
         }
     }
