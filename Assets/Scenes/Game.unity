@@ -415,6 +415,8 @@ GameObject:
   m_Component:
   - component: {fileID: 577072964}
   - component: {fileID: 577072965}
+  - component: {fileID: 577072967}
+  - component: {fileID: 577072966}
   m_Layer: 7
   m_Name: Boss1
   m_TagString: Untagged
@@ -495,6 +497,35 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &577072966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577072962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d7486e9ab7046409b62fa7b69b98f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &577072967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577072962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 018ad020c588e4046b54c2b8e52bc7b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resistance: 5
+  enemyMaxHealth: 500
+  xpWillGive: 100
+  Score: 1000
+  XP: {fileID: 4285614594035093703, guid: c20c2b09b4a60bd4b9733d948220d449, type: 3}
 --- !u!1 &625662509
 GameObject:
   m_ObjectHideFlags: 0
