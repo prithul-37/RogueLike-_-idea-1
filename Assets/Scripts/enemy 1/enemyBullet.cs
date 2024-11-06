@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyBullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     private GameObject player;
     private Rigidbody2D rb;

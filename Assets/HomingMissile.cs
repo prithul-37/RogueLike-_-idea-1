@@ -47,7 +47,7 @@ public class HomingMissile : MonoBehaviour
             // Check if close enough to the target to destroy itself
             if (Vector3.Distance(transform.position, target.position) < destroyDistance)
             {
-                target.GetComponent<Enemy>().Damage(Damage, transform.position);
+                //target.GetComponent<Enemy>().Damage(Damage, transform.position);
                 Destroy(gameObject); // Destroy the missile
 
             }
