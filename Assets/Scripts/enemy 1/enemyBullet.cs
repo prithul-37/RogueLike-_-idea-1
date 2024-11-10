@@ -8,7 +8,7 @@ public class EnemyBullet : MonoBehaviour
     private Rigidbody2D rb;
     public float bulletForce;
 
-    void Start()
+    public void ShootAtPlayer()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -19,7 +19,18 @@ public class EnemyBullet : MonoBehaviour
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         rb.rotation = angle;
 
-        rb.AddForce(dir*bulletForce,ForceMode2D.Impulse);
+        rb.AddForce(dir * bulletForce, ForceMode2D.Impulse);
+        StartCoroutine(DestroyObject());
+    }
+
+
+    public void ShootAtDierctionGiven(Vector3 dir)
+    {
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        rb.rotation = angle;
+
+        rb.AddForce(dir * bulletForce, ForceMode2D.Impulse);
         StartCoroutine(DestroyObject());
     }
 
