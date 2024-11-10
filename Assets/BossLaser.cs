@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FireLaserBoss : MonoBehaviour
+public class BossLaser: MonoBehaviour
 {
     RaycastHit2D hit;
     LayerMask mask;

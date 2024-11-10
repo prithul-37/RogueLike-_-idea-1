@@ -686,8 +686,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d7486e9ab7046409b62fa7b69b98f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FireLaserBoss: []
-  Bullet: {fileID: 874683578946319782, guid: 1b0b3c2568221bb40b2f551136f66521, type: 3}
+  FireLaserBoss:
+  - {fileID: 625662513}
+  - {fileID: 804266603}
+  RotatingCannon: {fileID: 1949341712}
+  primaryCannon: {fileID: 1482805856}
 --- !u!114 &577072967
 MonoBehaviour:
   m_ObjectHideFlags: 0

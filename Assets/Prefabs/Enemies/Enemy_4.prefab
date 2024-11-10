@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4842548832413751486}
-  - component: {fileID: 2728783785204809984}
+  - component: {fileID: 6616022033302963658}
   m_Layer: 7
   m_Name: FirePoint 1
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7540580447220072871}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2728783785204809984
+--- !u!114 &6616022033302963658
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,12 +41,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3333514053304890181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67ce9bbc33c668847ac1627278f3250d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7477d8eb42936a14287c25260ad8f2c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 874683578946319782, guid: 1b0b3c2568221bb40b2f551136f66521, type: 3}
-  bulletForce: 0
-  fireRate: 40
+  bulletForce: 10
+  fireRate: 5
   AudioSource: {fileID: 0}
 --- !u!1 &8082938600222068758
 GameObject:
@@ -243,7 +243,6 @@ MonoBehaviour:
   xpWillGive: 10
   Score: 10
   XP: {fileID: 4285614594035093703, guid: c20c2b09b4a60bd4b9733d948220d449, type: 3}
-  floatingText: {fileID: 4421329947091987515, guid: 53b847b95ae75404f969696d55d29420, type: 3}
 --- !u!114 &544295837204329868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,7 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3588074161449468872}
-  - component: {fileID: 5166555566848670120}
+  - component: {fileID: 2017483874548173257}
   m_Layer: 7
   m_Name: FirePoint 2
   m_TagString: Untagged
@@ -289,7 +288,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7540580447220072871}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5166555566848670120
+--- !u!114 &2017483874548173257
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -298,10 +297,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8874354640149785013}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67ce9bbc33c668847ac1627278f3250d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7477d8eb42936a14287c25260ad8f2c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 874683578946319782, guid: 1b0b3c2568221bb40b2f551136f66521, type: 3}
-  bulletForce: 0
-  fireRate: 40
+  bulletForce: 10
+  fireRate: 5
   AudioSource: {fileID: 0}

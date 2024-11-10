@@ -39,7 +39,8 @@ public class fire : MonoBehaviour
         while (true)
         {
             yield return wait;
-            GameObject GG = Instantiate(bullet, transform.position, Quaternion.identity); 
+            GameObject GG = Instantiate(bullet, transform.position, Quaternion.identity);
+            GG.GetComponent<EnemyBullet>().ShootAtPlayer();
         }
 
     }

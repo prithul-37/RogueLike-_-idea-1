@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class Boss1 : MonoBehaviour
 {
-    public FireLaserBoss[] FireLaserBoss;
-    public GameObject Bullet;
-
-
-
+    [SerializeField] BossLaser[] FireLaserBoss;
+    [SerializeField] RotatingCannon RotatingCannon;
+    [SerializeField] PrimaryCannonBoss1 primaryCannon;
 
 }
