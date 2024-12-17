@@ -1,6 +1,7 @@
+using System.Collections;
 using UnityEngine;
 
-public class BossLaser: MonoBehaviour
+public class BossLaser : MonoBehaviour
 {
     RaycastHit2D hit;
     LayerMask mask;
@@ -60,6 +61,27 @@ public class BossLaser: MonoBehaviour
     public void ChangeLaserState(LaserState s)
     {
         laserState = s;
+    }
+
+    [Header("State Timers")]
+    public float loadingTime = 2f;   // Time for 'Loading' state
+    public float fireTime = 1f;      // Time for 'Fire' state
+    public float coolDownTime = 2f;  // Time for 'CoolDown' state
+
+    public IEnumerator CirculateLaserStates()
+    {
+
+        // Loading State
+        laserState = LaserState.Loading;
+        yield return new WaitForSeconds(loadingTime);
+
+        // Fire State
+        laserState = LaserState.Fire;
+        yield return new WaitForSeconds(fireTime);
+
+        // CoolDown State
+        laserState = LaserState.CoolDown;
+
     }
 
 }
