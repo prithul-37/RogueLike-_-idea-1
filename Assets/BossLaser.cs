@@ -40,7 +40,7 @@ public class BossLaser : MonoBehaviour
     void FireLaser()
     {
         lineRenderer.positionCount = 2;
-        Debug.Log(transform.up);
+        //Debug.Log(transform.up);
         hit = Physics2D.Raycast(transform.position, transform.up, 35, mask);
 
         if (hit.collider != null)

@@ -11,7 +11,7 @@ public class FireHighSpeedBulletsBoss : MonoBehaviour
     void Update()
     {
         // Fire bullet when enough time has passed
-        if (Time.time >= nextFireTime)
+        if (Time.time >= nextFireTime && fire)
         {
             Fire();
             nextFireTime = Time.time + fireRate;
@@ -27,4 +27,16 @@ public class FireHighSpeedBulletsBoss : MonoBehaviour
             b.GetComponent<EnemyBullet>().ShootAtDierctionGiven(transform.up);
         }
     }
+
+    bool fire = false;
+    public void StartFire()
+    {
+        fire = true;
+    }
+
+    public void StopFire()
+    {
+        fire = false;
+    }
+
 }

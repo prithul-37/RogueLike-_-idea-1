@@ -94,7 +94,8 @@ public class PrimaryCannonBoss1 : MonoBehaviour
                 break;
 
             case (PrimaryCannonState.Idle):
-
+                timer = 0;
+                recoilTimer = 0;
                 break;
         }
     }
@@ -153,9 +154,14 @@ public class PrimaryCannonBoss1 : MonoBehaviour
         Gizmos.DrawRay(transform.position, leftBoundary * 5f);
         Gizmos.DrawRay(transform.position, rightBoundary * 5f);
     }
+
+    public void ChangeCannonState(PrimaryCannonState primaryCannonState)
+    {
+        this.primaryCannonState = primaryCannonState;
+    }
 }
 
-enum PrimaryCannonState
+public enum PrimaryCannonState
 {
     Load,
     Fire,

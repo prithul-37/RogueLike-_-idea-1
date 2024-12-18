@@ -306,7 +306,7 @@ Transform:
   m_GameObject: {fileID: 312600097}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0.20699999, z: 0}
+  m_LocalPosition: {x: 0.1, y: 0.25199997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -337,7 +337,7 @@ Transform:
   m_GameObject: {fileID: 340855515}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: -0.287, z: 0}
+  m_LocalPosition: {x: 0.3, y: -0.242, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -686,11 +686,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d7486e9ab7046409b62fa7b69b98f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FireLaserBoss:
+  fireLaserBoss:
   - {fileID: 625662513}
   - {fileID: 804266603}
-  RotatingCannon: {fileID: 1949341712}
+  rotatingCannon: {fileID: 1949341712}
   primaryCannon: {fileID: 1482805856}
+  fireHighSpeedBulletsBoss: {fileID: 674860085}
+  currentState: 0
 --- !u!114 &577072967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -915,7 +917,7 @@ MonoBehaviour:
   hitEffect: {fileID: 7067213451004605993, guid: 579ac73fc7dbee547b5ddbaf22934247, type: 3}
   laserState: 2
   loadingTime: 2
-  fireTime: 1
+  fireTime: 4
   coolDownTime: 15
 --- !u!199 &625662514
 ParticleSystemRenderer:
@@ -5991,7 +5993,7 @@ MonoBehaviour:
   hitEffect: {fileID: 7067213451004605993, guid: 579ac73fc7dbee547b5ddbaf22934247, type: 3}
   laserState: 2
   loadingTime: 2
-  fireTime: 1
+  fireTime: 4
   coolDownTime: 15
 --- !u!199 &804266604
 ParticleSystemRenderer:
@@ -10824,7 +10826,7 @@ Transform:
   m_GameObject: {fileID: 911294642}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3, y: -0.287, z: 0}
+  m_LocalPosition: {x: -0.3, y: -0.242, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10933,7 +10935,7 @@ Transform:
   m_GameObject: {fileID: 1001895974}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 0.207, z: 0}
+  m_LocalPosition: {x: -0.1, y: 0.252, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10964,7 +10966,7 @@ Transform:
   m_GameObject: {fileID: 1363267847}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2, y: -0.04, z: 0}
+  m_LocalPosition: {x: 0.2, y: 0.0050000027, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11017,7 +11019,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1482805854
 Transform:
   m_ObjectHideFlags: 0
@@ -11046,7 +11048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8eb7cb8121d6446b7d3293d9042bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryCannonState: 0
+  primaryCannonState: 3
   Cannon: {fileID: 72034657}
   cannonLoadHideTime: 3
   cannonFireTime: 10
@@ -11139,7 +11141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1949341711
 Transform:
   m_ObjectHideFlags: 0
@@ -11185,7 +11187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1999612379
 Transform:
   m_ObjectHideFlags: 0
@@ -11312,7 +11314,7 @@ Transform:
   m_GameObject: {fileID: 2144833152}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2, y: -0.04, z: 0}
+  m_LocalPosition: {x: -0.2, y: 0.0050000027, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

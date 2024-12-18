@@ -21,13 +21,25 @@ public class RotatingCannon : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, temp);
 
         timer -= Time.deltaTime;
-        if (timer < 0)
+        if (timer < 0 && fire)
         {
             var gg = Instantiate(bullet1, transform.position, Quaternion.identity);
             gg.GetComponent<EnemyBullet2>().SetSourceTransform(transform);
             timer = 1 / frequency;
         }
 
+    }
+
+
+    bool fire = false;
+    public void StartFire()
+    {
+        fire = true;
+    }
+
+    public void StopFire()
+    {
+        fire = false;
     }
 
 }
