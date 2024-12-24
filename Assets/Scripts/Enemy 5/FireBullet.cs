@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FireBullet : MonoBehaviour
@@ -18,12 +16,12 @@ public class FireBullet : MonoBehaviour
     private void Update()
     {
         timer -= Time.deltaTime;
-        if(timer < 0)
+        if (timer < 0)
         {
             fire();
             timer = 5f;
         }
-        
+
     }
 
     void fire()

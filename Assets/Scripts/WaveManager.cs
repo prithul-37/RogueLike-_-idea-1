@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.UIElements;
 using UnityEngine;
 
 [System.Serializable]
@@ -26,9 +24,9 @@ public class WaveManager : MonoBehaviour
     private bool canSpawn;
     private bool waveEnd;
     private int spawanPosCount;
-    
+
     private int currentEnemy = 0;
-    
+
 
     private void Start()
     {
@@ -38,16 +36,16 @@ public class WaveManager : MonoBehaviour
         canSpawn = true;
         spawanPosCount = gameObject.transform.childCount;
         waveEnd = false;
-        Random.InitState((int) Time.time*1000);
+        Random.InitState((int)Time.time * 1000);
     }
 
     private void Update()
-    {   
+    {
         enemyTimer -= Time.deltaTime;
         waveTimer -= Time.deltaTime;
         if (enemyTimer < 0 && !waveEnd)
         {
-            
+
             if (currentEnemy < wave[currentWave].enemyCount && canSpawn)
             {
                 spawn();
@@ -60,14 +58,14 @@ public class WaveManager : MonoBehaviour
                 waveTimer = waveGap;
                 currentWave++;
             }
-            
+
         }
 
         else if (waveEnd && waveTimer < 0 && currentWave < wave.Length)
         {
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             currentEnemy = enemies.Length;
-            if(currentEnemy == 0)
+            if (currentEnemy == 0)
             {
                 StartCoroutine(waitNextWave());
             }
@@ -77,15 +75,15 @@ public class WaveManager : MonoBehaviour
     void spawn()
     {
         Instantiate(wave[currentWave].enemyList[Random.Range(0, wave[currentWave].enemyList.Length)],
-                    transform.GetChild(Random.Range(0,spawanPosCount)).transform.position,
+                    transform.GetChild(Random.Range(0, spawanPosCount)).transform.position,
                     Quaternion.identity);
         currentEnemy++;
     }
 
     IEnumerator waitNextWave()
-    {   
+    {
         yield return new WaitForSeconds(waveGap);
-        
+
         canSpawn = true;
         enemyTimer = 1 / wave[currentWave].rate;
         currentEnemy = 0;

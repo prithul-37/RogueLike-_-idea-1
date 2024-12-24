@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
@@ -12,7 +9,7 @@ public class Player : MonoBehaviour
     public float currhealth;
 
     public float speed;
-    
+
     public int XP;
     public int level = 0;
     private int nextLevel = 50;
@@ -33,7 +30,7 @@ public class Player : MonoBehaviour
     public void addXP(int x)
     {
         XP += x;
-        
+
 
         if (XP > nextLevel)
         {
@@ -44,7 +41,7 @@ public class Player : MonoBehaviour
             nextLevel += 20;
 
             speed += .5f;
-            speed = Mathf.Clamp(speed,4,15);
+            speed = Mathf.Clamp(speed, 4, 15);
 
             if (level % 10 == 0)
             {
@@ -62,7 +59,7 @@ public class Player : MonoBehaviour
     }
 
     public void death()
-    {   
+    {
         time = Time.time - time;
         score += (int)time * 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

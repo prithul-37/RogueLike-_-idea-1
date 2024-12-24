@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4200268470435905691}
   - component: {fileID: 5091995504750981540}
   - component: {fileID: 3638044403425525520}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -158,9 +158,9 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 0.41960788, g: 0.23137257, b: 0.8000001, a: 1}
+      key1: {r: 0.36078432, g: 0.19607845, b: 0.68235296, a: 0}
+      key2: {r: 0, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -176,14 +176,14 @@ TrailRenderer:
       ctime7: 0
       atime0: 0
       atime1: 65535
-      atime2: 0
+      atime2: 65535
       atime3: 0
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: -1
+      m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
@@ -208,7 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3380171826520218411}
   - component: {fileID: 8415189598993465585}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,8 @@ GameObject:
   - component: {fileID: 1531063457467034627}
   - component: {fileID: 6639521702869470701}
   - component: {fileID: 5524201539831534314}
-  m_Layer: 0
+  - component: {fileID: 8817411873668911123}
+  m_Layer: 9
   m_Name: HomingMissile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,14 +330,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c07b5fb41f936af4797c7cf2b32e8590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
   speed: 10
-  rotationSpeed: 5
-  destroyDistance: 0.5
-  mask:
+  rotateSpeed: 200
+  targetMask:
     serializedVersion: 2
     m_Bits: 128
-  Redius: 28.2
-  Damage: 100
 --- !u!50 &5524201539831534314
 Rigidbody2D:
   serializedVersion: 4
@@ -362,5 +361,51 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!68 &8817411873668911123
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7691599490641009955}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.5, y: 0}
+  - {x: 0.45279676, y: -1.2229928}
+  - {x: -0.5426625, y: -1.2372135}
+  - {x: -0.51700044, y: 0.20788693}
+  - {x: 0.0023914035, y: 1.0754334}
+  - {x: 0.51860666, y: 0.1931625}
+  - {x: 0.5142209, y: -1.230103}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

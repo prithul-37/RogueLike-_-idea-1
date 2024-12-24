@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -17,13 +15,13 @@ public class worldWrap : MonoBehaviour
     {
         Vector3 objectPos = Camera.main.WorldToScreenPoint(transform.position);
 
-        float right = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width,Screen.height)).x;
+        float right = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height)).x;
         float left = Camera.main.ScreenToWorldPoint(new Vector2(0f, 0f)).x;
 
         float top = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height)).y;
         float bottom = Camera.main.ScreenToWorldPoint(new Vector2(0f, 0f)).y;
 
-        if(objectPos.x<0)
+        if (objectPos.x < 0)
         {
             transform.position = new Vector2(right - threshold, transform.position.y);
 

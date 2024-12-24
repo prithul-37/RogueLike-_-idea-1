@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FollowPath : MonoBehaviour
@@ -40,27 +38,27 @@ public class FollowPath : MonoBehaviour
             goTO = path.transform.GetChild(0).transform.position;
             goZero = false;
         }
-        else { goTO = path.transform.GetChild(lastChildIndex).transform.position; goZero = true;  }
+        else { goTO = path.transform.GetChild(lastChildIndex).transform.position; goZero = true; }
 
     }
 
     private void FixedUpdate()
-    {   
-        if(Vector3.Distance(transform.position,goTO) <= 0.005) inPos = true;
+    {
+        if (Vector3.Distance(transform.position, goTO) <= 0.005) inPos = true;
 
-        if(!inPos)
-        { 
-            Vector3 nextPos = Vector3.MoveTowards(transform.position,goTO,moveSpeed*Time.deltaTime);
+        if (!inPos)
+        {
+            Vector3 nextPos = Vector3.MoveTowards(transform.position, goTO, moveSpeed * Time.deltaTime);
             rb.MovePosition(nextPos);
             //print(Vector3.Distance(transform.position, goTO));
         }
         else
-        {   
-            if (goZero) 
+        {
+            if (goZero)
             {
                 Vector3 nextPos = Vector3.MoveTowards(transform.position, path.transform.GetChild(currIndex - 1).transform.position, moveSpeed * Time.deltaTime);
                 rb.MovePosition(nextPos);
-                if (Vector3.Distance(transform.position, path.transform.GetChild(currIndex - 1).transform.position)<0.005)
+                if (Vector3.Distance(transform.position, path.transform.GetChild(currIndex - 1).transform.position) < 0.005)
                 {
                     if (currIndex == 1) goZero = false;
 
@@ -71,9 +69,9 @@ public class FollowPath : MonoBehaviour
             {
                 Vector3 nextPos = Vector3.MoveTowards(transform.position, path.transform.GetChild(currIndex + 1).transform.position, moveSpeed * Time.deltaTime);
                 rb.MovePosition(nextPos);
-                if (Vector3.Distance(transform.position, path.transform.GetChild(currIndex + 1).transform.position) < 0.005) 
-                { 
-                    if (currIndex == lastChildIndex     - 1) goZero = true;
+                if (Vector3.Distance(transform.position, path.transform.GetChild(currIndex + 1).transform.position) < 0.005)
+                {
+                    if (currIndex == lastChildIndex - 1) goZero = true;
 
                     currIndex++;
                 }

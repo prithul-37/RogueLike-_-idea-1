@@ -58,6 +58,11 @@ public class Boss1 : MonoBehaviour
         HandleState();
     }
 
+    public BossState GetCurrentBossState()
+    {
+        return currentState;
+    }
+
     void HandleState()
     {
         switch (currentState)
@@ -65,7 +70,7 @@ public class Boss1 : MonoBehaviour
             case BossState.Idle:
                 if (once)
                 {
-                    Debug.Log("Boss is idle.");
+                    //Debug.Log("Boss is idle.");
                     once = false;
                 }
 
@@ -104,7 +109,7 @@ public class Boss1 : MonoBehaviour
 
         currentState = newState;
 
-        Debug.Log($"Switched to state: {currentState}");
+        //Debug.Log($"Switched to state: {currentState}");
     }
 
     void TriggerLaserAttack()
@@ -116,7 +121,7 @@ public class Boss1 : MonoBehaviour
                 StartCoroutine(laser.CirculateLaserStates());
             }
 
-            Debug.Log("Laser Attack Triggered!");
+            //Debug.Log("Laser Attack Triggered!");
         }
         once = false;
     }
@@ -126,7 +131,7 @@ public class Boss1 : MonoBehaviour
         if (rotatingCannon != null && once)
         {
             rotatingCannon.StartFire();
-            Debug.Log("Rotating Cannon Attack Triggered!");
+            //Debug.Log("Rotating Cannon Attack Triggered!");
             Invoke(nameof(StopRotatingCannonAttack), stateDurations[BossState.RotatingCannonAttack]);
             once = false;
         }
@@ -137,7 +142,7 @@ public class Boss1 : MonoBehaviour
         if (rotatingCannon != null)
         {
             rotatingCannon.StopFire();
-            Debug.Log("Rotating Cannon Attack stopped!");
+            //Debug.Log("Rotating Cannon Attack stopped!");
         }
     }
 
@@ -146,7 +151,7 @@ public class Boss1 : MonoBehaviour
         if (primaryCannon != null && once)
         {
             primaryCannon.ChangeCannonState(PrimaryCannonState.Load);
-            Debug.Log("Primary Cannon Attack Triggered!");
+            //Debug.Log("Primary Cannon Attack Triggered!");
         }
         once = false;
     }
@@ -156,7 +161,7 @@ public class Boss1 : MonoBehaviour
         if (fireHighSpeedBulletsBoss != null && once)
         {
             fireHighSpeedBulletsBoss.StartFire();
-            Debug.Log("High-Speed Bullet Attack Triggered!");
+            //Debug.Log("High-Speed Bullet Attack Triggered!");
             Invoke(nameof(StopHighSpeedBulletAttack), stateDurations[BossState.HighSpeedBulletAttack]);
         }
         once = false;
@@ -167,7 +172,7 @@ public class Boss1 : MonoBehaviour
         if (fireHighSpeedBulletsBoss != null)
         {
             fireHighSpeedBulletsBoss.StopFire();
-            Debug.Log("High-Speed Bullet Attack off!");
+            //Debug.Log("High-Speed Bullet Attack off!");
         }
     }
 }
