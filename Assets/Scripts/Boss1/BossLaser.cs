@@ -7,22 +7,22 @@ public class BossLaser : MonoBehaviour
     LayerMask mask;
     LineRenderer lineRenderer;
     public GameObject hitEffect;
-    ParticleSystem particleSystem;
+    ParticleSystem ps;
 
     [SerializeField] LaserState laserState;
     void Start()
     {
         mask = LayerMask.GetMask("Player");
         lineRenderer = GetComponent<LineRenderer>();
-        particleSystem = GetComponent<ParticleSystem>();
-        particleSystem.Stop();
+        ps = GetComponent<ParticleSystem>();
+        ps.Stop();
     }
     void Update()
     {
         switch (laserState)
         {
             case (LaserState.Loading):
-                particleSystem.Play();
+                ps.Play();
                 break;
 
             case (LaserState.Fire):
@@ -30,7 +30,7 @@ public class BossLaser : MonoBehaviour
                 break;
 
             case (LaserState.CoolDown):
-                particleSystem.Stop();
+                ps.Stop();
                 lineRenderer.positionCount = 0;
                 break;
         }
@@ -47,6 +47,10 @@ public class BossLaser : MonoBehaviour
         {
             lineRenderer.SetPosition(0, transform.position);
             lineRenderer.SetPosition(1, hit.point);
+            if (hit.collider.gameObject.tag == "Player")
+            {
+                hit.collider.gameObject.GetComponent<Player>().Damage(1);
+            }
             var effect = Instantiate(hitEffect, hit.point, Quaternion.identity);
 
         }

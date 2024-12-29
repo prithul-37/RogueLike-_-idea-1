@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
 
     }
 
-    public void addXP(int x)
+    public void AddXP(int x)
     {
         XP += x;
 
@@ -58,10 +58,19 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void death()
+    public void Death()
     {
         time = Time.time - time;
         score += (int)time * 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void Damage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Death();
+        }
     }
 }

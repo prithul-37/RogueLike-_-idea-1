@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class EnemyBullet2 : MonoBehaviour
@@ -55,7 +56,8 @@ public class EnemyBullet2 : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<Player>().death();
+
+            collision.gameObject.GetComponent<Player>().Death();
             Destroy(gameObject);
         }
     }

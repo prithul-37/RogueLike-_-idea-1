@@ -37,7 +37,7 @@ public class EnemyBullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            player.GetComponent<Player>().death();
+            collision.gameObject.GetComponent<Player>().Death();
             Destroy(gameObject);
         }
     }

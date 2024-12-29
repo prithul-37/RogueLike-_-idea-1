@@ -7,6 +7,6 @@ public class BulletEnemy5 : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {   
         if(collision.gameObject.tag == "Player")
-            collision.gameObject.GetComponent<Player>().death();
+            collision.gameObject.GetComponent<Player>().Death();
     }
 }

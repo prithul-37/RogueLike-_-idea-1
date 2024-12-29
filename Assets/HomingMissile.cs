@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class HomingMissile : MonoBehaviour
 {
 
@@ -11,6 +10,7 @@ public class HomingMissile : MonoBehaviour
 
     private Rigidbody2D rb;
     public LayerMask targetMask;
+    public GameObject hitAnimationObj;
 
     // Use this for initialization
     void Start()
@@ -30,8 +30,23 @@ public class HomingMissile : MonoBehaviour
         rb.angularVelocity = -rotateAmount * rotateSpeed;
 
         rb.velocity = transform.up * speed;
+
+        DetectObjectsInRange();
     }
 
+
+    void DetectObjectsInRange()
+    {
+        // Check if there is any collider within the detection circle
+        Collider2D detectedObject = Physics2D.OverlapCircle(transform.position, .1f, targetMask);
+
+        if (detectedObject != null)
+        {
+            Debug.Log($"Detected object: {detectedObject.name}");
+            Instantiate(hitAnimationObj, new Vector3(transform.position.x, transform.position.y, -.2f), Quaternion.identity);
+            Destroy(gameObject);
+        }
+    }
 
     void FindTarget()
     {
@@ -43,16 +58,6 @@ public class HomingMissile : MonoBehaviour
             target = collider.transform; // Assign the detected target
         }
     }
-    void OnTriggerEnter2D()
-    {
-        Debug.Log("hitting");
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        // Put a particle effect here
-        Debug.Log("hitting");
-        //Destroy(gameObject);
 
-    }
 }
